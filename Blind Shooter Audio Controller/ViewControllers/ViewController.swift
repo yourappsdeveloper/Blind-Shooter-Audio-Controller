@@ -61,6 +61,8 @@ extension ViewController {
     }
     
     private func handleTouches(_ point: CGPoint) {
+        centerView.center = point
+        
         let halfWith = mainView.frame.width / 2
         let halfHeight = mainView.frame.height / 2
         
@@ -83,6 +85,10 @@ extension ViewController: TouchViewDelegate {
     }
     
     func touchesEnded() {
+        UIView.animate(withDuration: 0.25, delay: 0) { [weak self] in
+            guard let self = self else { return }
+            self.centerView.center = self.mainView.center
+        }
         audioPlayer.stopPlaySound()
     }    
 }

@@ -31,9 +31,18 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBb-D7-L7T">
                                 <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joystick" translatesAutoresizingMaskIntoConstraints="NO" id="F6v-rV-oPr">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="F6v-rV-oPr" secondAttribute="trailing" id="87Z-p4-Zl1"/>
+                                    <constraint firstItem="F6v-rV-oPr" firstAttribute="top" secondItem="aBb-D7-L7T" secondAttribute="top" id="DwQ-OR-LIK"/>
                                     <constraint firstAttribute="height" constant="100" id="Hm0-fD-Niz"/>
+                                    <constraint firstItem="F6v-rV-oPr" firstAttribute="leading" secondItem="aBb-D7-L7T" secondAttribute="leading" id="aWZ-BA-gYs"/>
+                                    <constraint firstAttribute="bottom" secondItem="F6v-rV-oPr" secondAttribute="bottom" id="di2-QK-YtF"/>
                                     <constraint firstAttribute="width" secondItem="aBb-D7-L7T" secondAttribute="height" id="l5v-nE-Z6h"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -71,6 +80,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="joystick" width="980" height="980"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
