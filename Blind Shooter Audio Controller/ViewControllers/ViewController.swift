@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     private let audioPlayer = AudioPlayer()
 
-    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var mainView: TouchView!
     @IBOutlet weak var centerView: UIView!
     
     override func viewDidLoad() {
@@ -22,6 +22,7 @@ class ViewController: UIViewController {
 
 extension ViewController {
     private func configureOnViewLoad() {
+        mainView.delegate = self
         addTapGestureRecognizer()
         addSwipeGestureRecognizer()
     }
@@ -33,8 +34,8 @@ extension ViewController {
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
-        guard let fingers = sender?.numberOfTouchesRequired else { return }
-        audioPlayer.playSound(gesture: .tap(count: .double, fingers: Int8(fingers)))
+        guard !mainView.centerMode, let fingers = sender?.numberOfTouchesRequired else { return }
+        audioPlayer.playAudio(gesture: .tap(count: .double, fingers: Int8(fingers)))
     }
     
     private func addSwipeGestureRecognizer() {
@@ -47,8 +48,8 @@ extension ViewController {
     }
     
     @objc func handleSwipe(_ sender: UISwipeGestureRecognizer? = nil) {
-        guard let direction = sender?.direction, let fingers = sender?.numberOfTouchesRequired else { return }
-        audioPlayer.playSound(gesture: .swipe(direction: direction , fingers: Int8(fingers)))
+        guard !mainView.centerMode, let direction = sender?.direction, let fingers = sender?.numberOfTouchesRequired else { return }
+        audioPlayer.playAudio(gesture: .swipe(direction: direction , fingers: Int8(fingers)))
     }
     
     private func getSwipeGestureRecognizer(direction: UISwipeGestureRecognizer.Direction, fingers: Int) -> UISwipeGestureRecognizer {
@@ -58,5 +59,30 @@ extension ViewController {
         
         return swipeGesture
     }
+    
+    private func handleTouches(_ point: CGPoint) {
+        let halfWith = mainView.frame.width / 2
+        let halfHeight = mainView.frame.height / 2
+        
+        let pitch = Float(halfHeight - point.y) / 1
+        let pan = Float((point.x - halfWith) / halfWith)
+
+        audioPlayer.setPitch(pitch)
+        audioPlayer.setPan(pan)
+    }
 }
 
+extension ViewController: TouchViewDelegate {
+
+    func touchesBeganInCenter() {
+        audioPlayer.playSound()
+    }
+    
+    func touchesMoved(_ point: CGPoint) {
+        handleTouches(point)
+    }
+    
+    func touchesEnded() {
+        audioPlayer.stopPlaySound()
+    }    
+}

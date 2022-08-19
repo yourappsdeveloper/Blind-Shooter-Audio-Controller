@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A2AED9128AFDA050057A832 /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2AED9028AFDA050057A832 /* TouchView.swift */; };
 		9A8019CB28AFA2F300AA761D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8019CA28AFA2F300AA761D /* AppDelegate.swift */; };
 		9A8019CD28AFA2F300AA761D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8019CC28AFA2F300AA761D /* SceneDelegate.swift */; };
 		9A8019CF28AFA2F300AA761D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8019CE28AFA2F300AA761D /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A2AED9028AFDA050057A832 /* TouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchView.swift; sourceTree = "<group>"; };
 		9A8019C728AFA2F300AA761D /* Blind Shooter Audio Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blind Shooter Audio Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8019CA28AFA2F300AA761D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A8019CC28AFA2F300AA761D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A2AED8D28AFD4280057A832 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A2AED9028AFDA050057A832 /* TouchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9A8019BE28AFA2F300AA761D = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 				9A8019E128AFAA0700AA761D /* AppDelegate */,
 				9A8019E328AFAA3800AA761D /* Storyboards */,
 				9A8019E228AFAA1C00AA761D /* ViewControllers */,
+				9A2AED8D28AFD4280057A832 /* Views */,
 				9A8019E528AFAA7B00AA761D /* Common */,
 				9A8019EB28AFAB9100AA761D /* Resources */,
 				9A8019D328AFA2F500AA761D /* Assets.xcassets */,
@@ -274,6 +285,7 @@
 			files = (
 				9A8019CF28AFA2F300AA761D /* ViewController.swift in Sources */,
 				9A8019CB28AFA2F300AA761D /* AppDelegate.swift in Sources */,
+				9A2AED9128AFDA050057A832 /* TouchView.swift in Sources */,
 				9A8019E728AFAAD300AA761D /* AudioPlayer.swift in Sources */,
 				9A8019DF28AFA99100AA761D /* UIView+Extensions.swift in Sources */,
 				9A8019CD28AFA2F300AA761D /* SceneDelegate.swift in Sources */,
