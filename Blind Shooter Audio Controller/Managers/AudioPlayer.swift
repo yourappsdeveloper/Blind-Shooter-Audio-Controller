@@ -70,6 +70,7 @@ class AudioPlayer {
         // 6: start the engine and player
         try? engine.start()
         audioPlayer.play()
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate)) // Vibrate
     }
     
     func stopPlaySound() {
