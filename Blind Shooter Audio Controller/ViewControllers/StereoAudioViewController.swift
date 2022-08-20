@@ -1,13 +1,13 @@
 //
-//  ViewController.swift
+//  StereoAudioViewController.swift
 //  Blind Shooter Audio Controller
 //
-//  Created by Aleksandr on 19.08.2022.
+//  Created by Alexandr on 20.08.2022.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class StereoAudioViewController: UIViewController {
     
     private let audioPlayer = AudioPlayer()
 
@@ -18,13 +18,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configureOnViewLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred() // haptic feedback
+    }
 }
 
-extension ViewController {
+extension StereoAudioViewController {
     private func configureOnViewLoad() {
         mainView.delegate = self
         addTapGestureRecognizer()
-        addSwipeGestureRecognizer()
     }
     
     private func addTapGestureRecognizer() {
@@ -34,32 +38,10 @@ extension ViewController {
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
-        guard !mainView.centerMode, let fingers = sender?.numberOfTouchesRequired else { return }
+        guard let fingers = sender?.numberOfTouchesRequired else { return }
         audioPlayer.playAudio(gesture: .tap(count: .double, fingers: Int8(fingers)))
     }
-    
-    private func addSwipeGestureRecognizer() {
-        for fingers in 1...3 {
-            mainView.addGestureRecognizer(getSwipeGestureRecognizer(direction: .up, fingers: fingers))
-            mainView.addGestureRecognizer(getSwipeGestureRecognizer(direction: .down, fingers: fingers))
-            mainView.addGestureRecognizer(getSwipeGestureRecognizer(direction: .left, fingers: fingers))
-            mainView.addGestureRecognizer(getSwipeGestureRecognizer(direction: .right, fingers: fingers))
-        }
-    }
-    
-    @objc func handleSwipe(_ sender: UISwipeGestureRecognizer? = nil) {
-        guard !mainView.centerMode, let direction = sender?.direction, let fingers = sender?.numberOfTouchesRequired else { return }
-        audioPlayer.playAudio(gesture: .swipe(direction: direction , fingers: Int8(fingers)))
-    }
-    
-    private func getSwipeGestureRecognizer(direction: UISwipeGestureRecognizer.Direction, fingers: Int) -> UISwipeGestureRecognizer {
-        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipe(_:)))
-        swipeGesture.numberOfTouchesRequired = fingers
-        swipeGesture.direction = direction
-        
-        return swipeGesture
-    }
-    
+
     private func handleTouches(_ point: CGPoint) {
         centerView.center = point
         
@@ -69,15 +51,27 @@ extension ViewController {
         let pitch = Float(halfHeight - point.y) / 1
         let pan = Float((point.x - halfWith) / halfWith)
 
+        // Move Up
+        if point.y < halfHeight {
+            guard let url = Bundle.main.url(forResource: "1_finger_hold_down_Moving_up", withExtension: "mp3") else { return }
+            audioPlayer.playSound(url: url)
+        }
+        // Move Down
+        else {
+            guard let url = Bundle.main.url(forResource: "1_finger_hold_down_moving_Down", withExtension: "mp3") else { return }
+            audioPlayer.playSound(url: url)
+        }
+        
         audioPlayer.setPitch(pitch)
         audioPlayer.setPan(pan)
     }
 }
 
-extension ViewController: TouchViewDelegate {
+extension StereoAudioViewController: TouchViewDelegate {
 
     func touchesBeganInCenter() {
-        audioPlayer.playSound()
+        guard let url = Bundle.main.url(forResource: "1_finger_hold_down_Center", withExtension: "mp3") else { return }
+        audioPlayer.playSound(url: url)
     }
     
     func touchesMoved(_ point: CGPoint) {
@@ -90,5 +84,5 @@ extension ViewController: TouchViewDelegate {
             self.centerView.center = self.mainView.center
         }
         audioPlayer.stopPlaySound()
-    }    
+    }
 }

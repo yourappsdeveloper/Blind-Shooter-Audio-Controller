@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q8P-Hj-m6e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Voice-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Blind_Shooter_Audio_Controller" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="VoiceController" customModule="Blind_Shooter_Audio_Controller" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,27 +30,7 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBb-D7-L7T">
-                                <rect key="frame" x="157" y="398" width="100" height="100"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joystick" translatesAutoresizingMaskIntoConstraints="NO" id="F6v-rV-oPr">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="F6v-rV-oPr" secondAttribute="trailing" id="87Z-p4-Zl1"/>
-                                    <constraint firstItem="F6v-rV-oPr" firstAttribute="top" secondItem="aBb-D7-L7T" secondAttribute="top" id="DwQ-OR-LIK"/>
-                                    <constraint firstAttribute="height" constant="100" id="Hm0-fD-Niz"/>
-                                    <constraint firstItem="F6v-rV-oPr" firstAttribute="leading" secondItem="aBb-D7-L7T" secondAttribute="leading" id="aWZ-BA-gYs"/>
-                                    <constraint firstAttribute="bottom" secondItem="F6v-rV-oPr" secondAttribute="bottom" id="di2-QK-YtF"/>
-                                    <constraint firstAttribute="width" secondItem="aBb-D7-L7T" secondAttribute="height" id="l5v-nE-Z6h"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5WK-g0-i2z" customClass="TouchView" customModule="Blind_Shooter_Audio_Controller" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5WK-g0-i2z">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -57,11 +38,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aBb-D7-L7T" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1nL-cM-Xnw"/>
                             <constraint firstItem="PRv-ju-LSW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ctn-Ok-UXL"/>
                             <constraint firstItem="PRv-ju-LSW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XFF-aC-9Rq"/>
                             <constraint firstItem="5WK-g0-i2z" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="bvG-L5-whn"/>
-                            <constraint firstItem="aBb-D7-L7T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dMG-qm-arY"/>
                             <constraint firstItem="5WK-g0-i2z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oNi-iV-8Ja"/>
                             <constraint firstItem="5WK-g0-i2z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pPB-Ve-8xf"/>
                             <constraint firstAttribute="bottom" secondItem="5WK-g0-i2z" secondAttribute="bottom" id="qYE-sB-c1V"/>
@@ -69,18 +48,114 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PRv-ju-LSW" secondAttribute="trailing" id="sWn-tj-JIr"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Voice" id="eKW-gq-KbG">
+                        <imageReference key="image" image="person.wave.2.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <connections>
-                        <outlet property="centerView" destination="aBb-D7-L7T" id="epS-BG-1AE"/>
                         <outlet property="mainView" destination="5WK-g0-i2z" id="Abt-s0-PEr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-488" y="852"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="UwN-Jx-syE">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="q8P-Hj-m6e" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KyT-4m-xr0">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="XCg-yI-0ff"/>
+                        <segue destination="5OK-m0-9uG" kind="relationship" relationship="viewControllers" id="sll-q4-pN0"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAn-j1-sMz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
+        </scene>
+        <!--Stereo Audio-->
+        <scene sceneID="KGa-IS-Jqg">
+            <objects>
+                <viewController id="5OK-m0-9uG" customClass="StereoAudioViewController" customModule="Blind_Shooter_Audio_Controller" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iSU-aO-rMJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vHq-kn-Twc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="StS-RN-vqK">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+                                        <color key="backgroundColor" red="0.0" green="0.3411764706" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHS-Rg-AxZ">
+                                        <rect key="frame" x="0.0" y="448" width="414" height="448"/>
+                                        <color key="backgroundColor" red="1" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTz-Od-U7i">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joystick" translatesAutoresizingMaskIntoConstraints="NO" id="AS5-AV-qeg">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XTz-Od-U7i" secondAttribute="height" id="2wf-DI-yRD"/>
+                                    <constraint firstItem="AS5-AV-qeg" firstAttribute="leading" secondItem="XTz-Od-U7i" secondAttribute="leading" id="IxG-R3-nAy"/>
+                                    <constraint firstAttribute="trailing" secondItem="AS5-AV-qeg" secondAttribute="trailing" id="Owz-4S-A0j"/>
+                                    <constraint firstItem="AS5-AV-qeg" firstAttribute="top" secondItem="XTz-Od-U7i" secondAttribute="top" id="gtn-Yc-OVh"/>
+                                    <constraint firstAttribute="bottom" secondItem="AS5-AV-qeg" secondAttribute="bottom" id="mBJ-6s-SMC"/>
+                                    <constraint firstAttribute="height" constant="100" id="phD-vg-NVG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7r7-9c-2h5" customClass="TouchView" customModule="Blind_Shooter_Audio_Controller" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3HB-OV-VVj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XTz-Od-U7i" firstAttribute="centerX" secondItem="iSU-aO-rMJ" secondAttribute="centerX" id="6ee-9q-2IL"/>
+                            <constraint firstItem="3HB-OV-VVj" firstAttribute="trailing" secondItem="vHq-kn-Twc" secondAttribute="trailing" id="70T-DH-Mh5"/>
+                            <constraint firstItem="vHq-kn-Twc" firstAttribute="leading" secondItem="3HB-OV-VVj" secondAttribute="leading" id="UJB-F7-kzz"/>
+                            <constraint firstItem="vHq-kn-Twc" firstAttribute="top" secondItem="iSU-aO-rMJ" secondAttribute="top" id="beS-I3-h86"/>
+                            <constraint firstItem="7r7-9c-2h5" firstAttribute="top" secondItem="iSU-aO-rMJ" secondAttribute="top" id="hAF-vX-dlS"/>
+                            <constraint firstItem="XTz-Od-U7i" firstAttribute="centerY" secondItem="iSU-aO-rMJ" secondAttribute="centerY" id="jkD-zx-cir"/>
+                            <constraint firstItem="7r7-9c-2h5" firstAttribute="leading" secondItem="iSU-aO-rMJ" secondAttribute="leading" id="jou-2k-gde"/>
+                            <constraint firstAttribute="bottom" secondItem="7r7-9c-2h5" secondAttribute="bottom" id="oGe-9n-BAC"/>
+                            <constraint firstItem="7r7-9c-2h5" firstAttribute="trailing" secondItem="iSU-aO-rMJ" secondAttribute="trailing" id="vua-A9-4TY"/>
+                            <constraint firstAttribute="bottom" secondItem="vHq-kn-Twc" secondAttribute="bottom" id="zLU-ie-KCa"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stereo Audio" id="yB6-IG-jxH">
+                        <imageReference key="image" image="volume.zzz.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="centerView" destination="XTz-Od-U7i" id="A5d-g0-Gq1"/>
+                        <outlet property="mainView" destination="7r7-9c-2h5" id="nsD-h8-Wgo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ua-oB-4A1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="771" y="852"/>
         </scene>
     </scenes>
     <resources>
         <image name="joystick" width="980" height="980"/>
+        <image name="person.wave.2.fill" catalog="system" width="128" height="118"/>
+        <image name="volume.zzz.fill" catalog="system" width="128" height="85"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

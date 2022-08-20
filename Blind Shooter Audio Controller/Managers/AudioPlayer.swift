@@ -17,7 +17,8 @@ class AudioPlayer {
     private var pitchControl = AVAudioUnitTimePitch()
     private var audioPlayer = AVAudioPlayerNode()
     private var defaultPitch: Float!
-    
+    private var currentSoundUrl: URL!
+
     func playAudio(gesture: GestureType) {
         guard let url = gesture.audioUrl else { return }
 
@@ -40,9 +41,10 @@ class AudioPlayer {
         }
     }
     
-    func playSound() {
-        guard let file = try? AVAudioFile(forReading: URL(fileURLWithPath: "/System/Library/Audio/UISounds/sms-received1.caf")) else { return }
-
+    func playSound(url: URL) {
+        guard currentSoundUrl != url, let file = try? AVAudioFile(forReading: url) else { return }
+        currentSoundUrl = url
+        
         let audioFormat = file.processingFormat
         let audioFrameCount = UInt32(file.length)
         guard let audioFileBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: audioFrameCount) else { return }
@@ -79,6 +81,7 @@ class AudioPlayer {
     }
     
     func setPitch(_ value: Float) {
+        guard defaultPitch != nil else { return }
         pitchControl.pitch = defaultPitch + value
     }
     
