@@ -21,7 +21,7 @@ class StereoAudioViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIImpactFeedbackGenerator(style: .medium).impactOccurred() // haptic feedback
+        UIImpactFeedbackGenerator(style: .heavy).impactOccurred() // haptic feedback
     }
 }
 

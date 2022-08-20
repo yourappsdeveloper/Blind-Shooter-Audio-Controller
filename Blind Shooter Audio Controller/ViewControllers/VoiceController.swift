@@ -20,7 +20,7 @@ class VoiceController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIImpactFeedbackGenerator(style: .light).impactOccurred() // haptic feedback 
+        UIImpactFeedbackGenerator(style: .rigid).impactOccurred() // haptic feedback 
     }
 }
 
