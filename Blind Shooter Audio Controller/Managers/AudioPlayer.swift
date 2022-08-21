@@ -77,6 +77,7 @@ class AudioPlayer {
     func stopPlaySound() {
         engine.stop()
         audioPlayer.stop()
+        currentSoundUrl = nil
     }
     
     func setPitch(_ value: Float) {

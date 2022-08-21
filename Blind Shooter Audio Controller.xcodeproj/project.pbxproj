@@ -33,7 +33,7 @@
 		A8C7B6DF28B11E010026B224 /* StereoAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C7B6DE28B11E010026B224 /* StereoAudioViewController.swift */; };
 		A8E6BC2F28B1225000F5922F /* 1_finger_hold_down_moving_Down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8E6BC2D28B1225000F5922F /* 1_finger_hold_down_moving_Down.mp3 */; };
 		A8E6BC3028B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8E6BC2E28B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 */; };
-		A8E6BC3228B1233500F5922F /* 1_finger_hold_down_Center.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8E6BC3128B1233500F5922F /* 1_finger_hold_down_Center.mp3 */; };
+		A8E6BC3428B2580500F5922F /* 1_finger_hold_down_Center.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8E6BC3328B2580500F5922F /* 1_finger_hold_down_Center.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +65,7 @@
 		A8C7B6DE28B11E010026B224 /* StereoAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StereoAudioViewController.swift; sourceTree = "<group>"; };
 		A8E6BC2D28B1225000F5922F /* 1_finger_hold_down_moving_Down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_finger_hold_down_moving_Down.mp3; sourceTree = "<group>"; };
 		A8E6BC2E28B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_finger_hold_down_Moving_up.mp3; sourceTree = "<group>"; };
-		A8E6BC3128B1233500F5922F /* 1_finger_hold_down_Center.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_finger_hold_down_Center.mp3; sourceTree = "<group>"; };
+		A8E6BC3328B2580500F5922F /* 1_finger_hold_down_Center.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_finger_hold_down_Center.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +183,7 @@
 		9A8019EC28AFABB300AA761D /* AudioFiles */ = {
 			isa = PBXGroup;
 			children = (
-				A8E6BC3128B1233500F5922F /* 1_finger_hold_down_Center.mp3 */,
+				A8E6BC3328B2580500F5922F /* 1_finger_hold_down_Center.mp3 */,
 				A8E6BC2D28B1225000F5922F /* 1_finger_hold_down_moving_Down.mp3 */,
 				A8E6BC2E28B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 */,
 				9A8019F028AFABCB00AA761D /* 1_Finger_Double_Tap.mp3 */,
@@ -273,7 +273,7 @@
 				9A8019D728AFA2F500AA761D /* LaunchScreen.storyboard in Resources */,
 				9A801A0028AFABCC00AA761D /* 2_Finger_Swipe_Left.mp3 in Resources */,
 				9A801A0328AFABCC00AA761D /* 1_Finger_Swipe_Up.mp3 in Resources */,
-				A8E6BC3228B1233500F5922F /* 1_finger_hold_down_Center.mp3 in Resources */,
+				A8E6BC3428B2580500F5922F /* 1_finger_hold_down_Center.mp3 in Resources */,
 				A8E6BC3028B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 in Resources */,
 				9A801A0228AFABCC00AA761D /* 3_Finger_Swipe_Up.mp3 in Resources */,
 				9A8019D428AFA2F500AA761D /* Assets.xcassets in Resources */,

@@ -10,6 +10,7 @@ import UIKit
 class StereoAudioViewController: UIViewController {
     
     private let audioPlayer = AudioPlayer()
+    var center: CGRect!
 
     @IBOutlet weak var mainView: TouchView!
     @IBOutlet weak var centerView: UIView!
@@ -28,6 +29,7 @@ class StereoAudioViewController: UIViewController {
 extension StereoAudioViewController {
     private func configureOnViewLoad() {
         mainView.delegate = self
+        center = centerView.frame
         addTapGestureRecognizer()
     }
     
@@ -50,16 +52,22 @@ extension StereoAudioViewController {
         
         let pitch = Float(halfHeight - point.y) / 1
         let pan = Float((point.x - halfWith) / halfWith)
-
-        // Move Up
-        if point.y < halfHeight {
-            guard let url = Bundle.main.url(forResource: "1_finger_hold_down_Moving_up", withExtension: "mp3") else { return }
+        
+        // Close to Center
+        if center.contains(point) {
+            guard let url = Bundle.main.url(forResource: "1_finger_hold_down_Center", withExtension: "mp3") else { return }
             audioPlayer.playSound(url: url)
-        }
-        // Move Down
-        else {
-            guard let url = Bundle.main.url(forResource: "1_finger_hold_down_moving_Down", withExtension: "mp3") else { return }
-            audioPlayer.playSound(url: url)
+        } else {
+            // Move Up
+            if point.y < halfHeight {
+                guard let url = Bundle.main.url(forResource: "1_finger_hold_down_Moving_up", withExtension: "mp3") else { return }
+                audioPlayer.playSound(url: url)
+            }
+            // Move Down
+            else {
+                guard let url = Bundle.main.url(forResource: "1_finger_hold_down_moving_Down", withExtension: "mp3") else { return }
+                audioPlayer.playSound(url: url)
+            }
         }
         
         audioPlayer.setPitch(pitch)
@@ -70,8 +78,6 @@ extension StereoAudioViewController {
 extension StereoAudioViewController: TouchViewDelegate {
 
     func touchesBegan(_ point: CGPoint) {
-        guard let url = Bundle.main.url(forResource: "1_finger_hold_down_Center", withExtension: "mp3") else { return }
-        audioPlayer.playSound(url: url)
         centerView.center = point
         UIImpactFeedbackGenerator(style: .light).impactOccurred() // haptic feedback
     }

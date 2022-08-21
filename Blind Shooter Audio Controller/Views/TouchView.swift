@@ -15,14 +15,9 @@ protocol TouchViewDelegate {
 
 class TouchView: UIView {
     
-    var centerMode = false
     var delegate: TouchViewDelegate?
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        let center = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
-        center.center = self.center
-        centerMode = center.frame.contains(point)
-        
         return self
     }
     
@@ -42,13 +37,11 @@ class TouchView: UIView {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        centerMode = false
         delegate?.touchesEnded()
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
-        centerMode = false
         delegate?.touchesEnded()
     }
 }
