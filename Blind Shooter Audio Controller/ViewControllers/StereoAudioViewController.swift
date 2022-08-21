@@ -10,7 +10,6 @@ import UIKit
 class StereoAudioViewController: UIViewController {
     
     private let audioPlayer = AudioPlayer()
-    var center: CGRect!
 
     @IBOutlet weak var mainView: TouchView!
     @IBOutlet weak var centerView: UIView!
@@ -29,7 +28,6 @@ class StereoAudioViewController: UIViewController {
 extension StereoAudioViewController {
     private func configureOnViewLoad() {
         mainView.delegate = self
-        center = centerView.frame
         addTapGestureRecognizer()
     }
     
@@ -45,8 +43,6 @@ extension StereoAudioViewController {
     }
 
     private func handleTouches(_ point: CGPoint) {
-        centerView.center = point
-        
         let halfWith = mainView.frame.width / 2
         let halfHeight = mainView.frame.height / 2
         
@@ -54,31 +50,37 @@ extension StereoAudioViewController {
         let pan = Float((point.x - halfWith) / halfWith)
         
         // Close to Center
-        if center.contains(point) {
+        if centerView.frame.contains(point) {
             guard let url = StereoAudioUrl.center else { return }
             audioPlayer.playSound(url: url)
         } else {
-            // Move Up
-            if point.y < halfHeight {
-                guard let url = StereoAudioUrl.movingUp else { return }
+            
+            // In CenterView Y axis
+            if point.y >= centerView.frame.minY, point.y <= centerView.frame.maxY {
+                guard let url = StereoAudioUrl.center else { return }
                 audioPlayer.playSound(url: url)
+            } else {
+                // Move Up
+                if point.y < halfHeight {
+                    guard let url = StereoAudioUrl.movingUp else { return }
+                    audioPlayer.playSound(url: url)
+                }
+                // Move Down
+                else {
+                    guard let url = StereoAudioUrl.movingDown else { return }
+                    audioPlayer.playSound(url: url)
+                }
+                
+                audioPlayer.setPitch(pitch)
             }
-            // Move Down
-            else {
-                guard let url = StereoAudioUrl.movingDown else { return }
-                audioPlayer.playSound(url: url)
-            }
+            audioPlayer.setPan(pan)
         }
-        
-        audioPlayer.setPitch(pitch)
-        audioPlayer.setPan(pan)
     }
 }
 
 extension StereoAudioViewController: TouchViewDelegate {
 
     func touchesBegan(_ point: CGPoint) {
-        centerView.center = point
         UIImpactFeedbackGenerator(style: .light).impactOccurred() // haptic feedback
     }
     
@@ -87,10 +89,6 @@ extension StereoAudioViewController: TouchViewDelegate {
     }
     
     func touchesEnded() {
-        UIView.animate(withDuration: 0.25, delay: 0) { [weak self] in
-            guard let self = self else { return }
-            self.centerView.center = self.mainView.center
-        }
         audioPlayer.stopPlaySound()
     }
 }

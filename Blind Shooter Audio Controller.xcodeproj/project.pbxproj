@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9A2AED9128AFDA050057A832 /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2AED9028AFDA050057A832 /* TouchView.swift */; };
+		9A3D49E628B2BE4A000BA353 /* 1_finger_hold_down_Below_Bottom_Of_Circle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9A3D49E228B2BE4A000BA353 /* 1_finger_hold_down_Below_Bottom_Of_Circle.mp3 */; };
+		9A3D49E728B2BE4A000BA353 /* 1_finger_hold_Down_above_Top_Of_Circle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9A3D49E328B2BE4A000BA353 /* 1_finger_hold_Down_above_Top_Of_Circle.mp3 */; };
+		9A3D49EB28B2BE76000BA353 /* 12_second_constant_beep_for_inside_of_circle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9A3D49EA28B2BE76000BA353 /* 12_second_constant_beep_for_inside_of_circle.mp3 */; };
 		9A8019CB28AFA2F300AA761D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8019CA28AFA2F300AA761D /* AppDelegate.swift */; };
 		9A8019CD28AFA2F300AA761D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8019CC28AFA2F300AA761D /* SceneDelegate.swift */; };
 		9A8019CF28AFA2F300AA761D /* VoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8019CE28AFA2F300AA761D /* VoiceController.swift */; };
@@ -31,14 +34,14 @@
 		9A801A0628AFABCC00AA761D /* 2_Finger_Swipe_Up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9A8019F928AFABCB00AA761D /* 2_Finger_Swipe_Up.mp3 */; };
 		9A801A0928AFAD2100AA761D /* Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A801A0828AFAD2100AA761D /* Gesture.swift */; };
 		A8C7B6DF28B11E010026B224 /* StereoAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C7B6DE28B11E010026B224 /* StereoAudioViewController.swift */; };
-		A8E6BC2F28B1225000F5922F /* 1_finger_hold_down_moving_Down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8E6BC2D28B1225000F5922F /* 1_finger_hold_down_moving_Down.mp3 */; };
-		A8E6BC3028B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8E6BC2E28B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 */; };
 		A8E6BC3628B2594F00F5922F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E6BC3528B2594F00F5922F /* Constants.swift */; };
-		A8E6BC3A28B25CD900F5922F /* 1_finger_hold_down_Center.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8E6BC3928B25CD900F5922F /* 1_finger_hold_down_Center.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9A2AED9028AFDA050057A832 /* TouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchView.swift; sourceTree = "<group>"; };
+		9A3D49E228B2BE4A000BA353 /* 1_finger_hold_down_Below_Bottom_Of_Circle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_finger_hold_down_Below_Bottom_Of_Circle.mp3; sourceTree = "<group>"; };
+		9A3D49E328B2BE4A000BA353 /* 1_finger_hold_Down_above_Top_Of_Circle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_finger_hold_Down_above_Top_Of_Circle.mp3; sourceTree = "<group>"; };
+		9A3D49EA28B2BE76000BA353 /* 12_second_constant_beep_for_inside_of_circle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12_second_constant_beep_for_inside_of_circle.mp3; sourceTree = "<group>"; };
 		9A8019C728AFA2F300AA761D /* Blind Shooter Audio Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blind Shooter Audio Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8019CA28AFA2F300AA761D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A8019CC28AFA2F300AA761D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,10 +67,7 @@
 		9A8019F928AFABCB00AA761D /* 2_Finger_Swipe_Up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2_Finger_Swipe_Up.mp3; sourceTree = "<group>"; };
 		9A801A0828AFAD2100AA761D /* Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gesture.swift; sourceTree = "<group>"; };
 		A8C7B6DE28B11E010026B224 /* StereoAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StereoAudioViewController.swift; sourceTree = "<group>"; };
-		A8E6BC2D28B1225000F5922F /* 1_finger_hold_down_moving_Down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_finger_hold_down_moving_Down.mp3; sourceTree = "<group>"; };
-		A8E6BC2E28B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_finger_hold_down_Moving_up.mp3; sourceTree = "<group>"; };
 		A8E6BC3528B2594F00F5922F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		A8E6BC3928B25CD900F5922F /* 1_finger_hold_down_Center.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_finger_hold_down_Center.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,9 +203,9 @@
 		A8E6BC3B28B25D3200F5922F /* StereoAudio */ = {
 			isa = PBXGroup;
 			children = (
-				A8E6BC3928B25CD900F5922F /* 1_finger_hold_down_Center.mp3 */,
-				A8E6BC2D28B1225000F5922F /* 1_finger_hold_down_moving_Down.mp3 */,
-				A8E6BC2E28B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 */,
+				9A3D49E328B2BE4A000BA353 /* 1_finger_hold_Down_above_Top_Of_Circle.mp3 */,
+				9A3D49E228B2BE4A000BA353 /* 1_finger_hold_down_Below_Bottom_Of_Circle.mp3 */,
+				9A3D49EA28B2BE76000BA353 /* 12_second_constant_beep_for_inside_of_circle.mp3 */,
 			);
 			path = StereoAudio;
 			sourceTree = "<group>";
@@ -292,7 +292,6 @@
 				9A8019D728AFA2F500AA761D /* LaunchScreen.storyboard in Resources */,
 				9A801A0028AFABCC00AA761D /* 2_Finger_Swipe_Left.mp3 in Resources */,
 				9A801A0328AFABCC00AA761D /* 1_Finger_Swipe_Up.mp3 in Resources */,
-				A8E6BC3028B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 in Resources */,
 				9A801A0228AFABCC00AA761D /* 3_Finger_Swipe_Up.mp3 in Resources */,
 				9A8019D428AFA2F500AA761D /* Assets.xcassets in Resources */,
 				9A8019FF28AFABCC00AA761D /* 1_Finger_Swipe_Right.mp3 in Resources */,
@@ -300,11 +299,12 @@
 				9A801A0128AFABCC00AA761D /* 2_Finger_Swipe_Right.mp3 in Resources */,
 				9A801A0528AFABCC00AA761D /* 3_Finger_Swipe_Right.mp3 in Resources */,
 				9A801A0628AFABCC00AA761D /* 2_Finger_Swipe_Up.mp3 in Resources */,
+				9A3D49E628B2BE4A000BA353 /* 1_finger_hold_down_Below_Bottom_Of_Circle.mp3 in Resources */,
+				9A3D49EB28B2BE76000BA353 /* 12_second_constant_beep_for_inside_of_circle.mp3 in Resources */,
 				9A801A0428AFABCC00AA761D /* 2_Finger_Swipe_Down.mp3 in Resources */,
 				9A8019D228AFA2F300AA761D /* Main.storyboard in Resources */,
 				9A8019FC28AFABCC00AA761D /* 1_Finger_Swipe_Left.mp3 in Resources */,
-				A8E6BC2F28B1225000F5922F /* 1_finger_hold_down_moving_Down.mp3 in Resources */,
-				A8E6BC3A28B25CD900F5922F /* 1_finger_hold_down_Center.mp3 in Resources */,
+				9A3D49E728B2BE4A000BA353 /* 1_finger_hold_Down_above_Top_Of_Circle.mp3 in Resources */,
 				9A8019FA28AFABCC00AA761D /* 3_Finger_Swipe_Left.mp3 in Resources */,
 				9A8019FB28AFABCC00AA761D /* 1_Finger_Swipe_Down.mp3 in Resources */,
 			);
@@ -472,7 +472,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = FQVKXC8D2N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Blind Shooter Audio Controller/Info.plist";
@@ -505,7 +505,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = FQVKXC8D2N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Blind Shooter Audio Controller/Info.plist";
