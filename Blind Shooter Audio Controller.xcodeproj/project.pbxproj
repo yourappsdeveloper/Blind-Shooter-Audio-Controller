@@ -33,7 +33,8 @@
 		A8C7B6DF28B11E010026B224 /* StereoAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C7B6DE28B11E010026B224 /* StereoAudioViewController.swift */; };
 		A8E6BC2F28B1225000F5922F /* 1_finger_hold_down_moving_Down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8E6BC2D28B1225000F5922F /* 1_finger_hold_down_moving_Down.mp3 */; };
 		A8E6BC3028B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8E6BC2E28B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 */; };
-		A8E6BC3428B2580500F5922F /* 1_finger_hold_down_Center.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8E6BC3328B2580500F5922F /* 1_finger_hold_down_Center.mp3 */; };
+		A8E6BC3628B2594F00F5922F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E6BC3528B2594F00F5922F /* Constants.swift */; };
+		A8E6BC3A28B25CD900F5922F /* 1_finger_hold_down_Center.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8E6BC3928B25CD900F5922F /* 1_finger_hold_down_Center.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +66,8 @@
 		A8C7B6DE28B11E010026B224 /* StereoAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StereoAudioViewController.swift; sourceTree = "<group>"; };
 		A8E6BC2D28B1225000F5922F /* 1_finger_hold_down_moving_Down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_finger_hold_down_moving_Down.mp3; sourceTree = "<group>"; };
 		A8E6BC2E28B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_finger_hold_down_Moving_up.mp3; sourceTree = "<group>"; };
-		A8E6BC3328B2580500F5922F /* 1_finger_hold_down_Center.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_finger_hold_down_Center.mp3; sourceTree = "<group>"; };
+		A8E6BC3528B2594F00F5922F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A8E6BC3928B25CD900F5922F /* 1_finger_hold_down_Center.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1_finger_hold_down_Center.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				9A8019E228AFAA1C00AA761D /* ViewControllers */,
 				9A2AED8D28AFD4280057A832 /* Views */,
 				9A8019E528AFAA7B00AA761D /* Common */,
+				A8E6BC3528B2594F00F5922F /* Constants.swift */,
 				9A8019EB28AFAB9100AA761D /* Resources */,
 				9A8019D328AFA2F500AA761D /* Assets.xcassets */,
 				9A8019D828AFA2F500AA761D /* Info.plist */,
@@ -183,9 +186,33 @@
 		9A8019EC28AFABB300AA761D /* AudioFiles */ = {
 			isa = PBXGroup;
 			children = (
-				A8E6BC3328B2580500F5922F /* 1_finger_hold_down_Center.mp3 */,
+				A8E6BC3C28B25D4500F5922F /* VoiceComands */,
+				A8E6BC3B28B25D3200F5922F /* StereoAudio */,
+			);
+			path = AudioFiles;
+			sourceTree = "<group>";
+		};
+		9A801A0728AFACA400AA761D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A801A0828AFAD2100AA761D /* Gesture.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A8E6BC3B28B25D3200F5922F /* StereoAudio */ = {
+			isa = PBXGroup;
+			children = (
+				A8E6BC3928B25CD900F5922F /* 1_finger_hold_down_Center.mp3 */,
 				A8E6BC2D28B1225000F5922F /* 1_finger_hold_down_moving_Down.mp3 */,
 				A8E6BC2E28B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 */,
+			);
+			path = StereoAudio;
+			sourceTree = "<group>";
+		};
+		A8E6BC3C28B25D4500F5922F /* VoiceComands */ = {
+			isa = PBXGroup;
+			children = (
 				9A8019F028AFABCB00AA761D /* 1_Finger_Double_Tap.mp3 */,
 				9A8019EE28AFABCB00AA761D /* 1_Finger_Swipe_Down.mp3 */,
 				9A8019EF28AFABCB00AA761D /* 1_Finger_Swipe_Left.mp3 */,
@@ -200,15 +227,7 @@
 				9A8019F828AFABCB00AA761D /* 3_Finger_Swipe_Right.mp3 */,
 				9A8019F528AFABCB00AA761D /* 3_Finger_Swipe_Up.mp3 */,
 			);
-			path = AudioFiles;
-			sourceTree = "<group>";
-		};
-		9A801A0728AFACA400AA761D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				9A801A0828AFAD2100AA761D /* Gesture.swift */,
-			);
-			path = Models;
+			path = VoiceComands;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +292,6 @@
 				9A8019D728AFA2F500AA761D /* LaunchScreen.storyboard in Resources */,
 				9A801A0028AFABCC00AA761D /* 2_Finger_Swipe_Left.mp3 in Resources */,
 				9A801A0328AFABCC00AA761D /* 1_Finger_Swipe_Up.mp3 in Resources */,
-				A8E6BC3428B2580500F5922F /* 1_finger_hold_down_Center.mp3 in Resources */,
 				A8E6BC3028B1225000F5922F /* 1_finger_hold_down_Moving_up.mp3 in Resources */,
 				9A801A0228AFABCC00AA761D /* 3_Finger_Swipe_Up.mp3 in Resources */,
 				9A8019D428AFA2F500AA761D /* Assets.xcassets in Resources */,
@@ -286,6 +304,7 @@
 				9A8019D228AFA2F300AA761D /* Main.storyboard in Resources */,
 				9A8019FC28AFABCC00AA761D /* 1_Finger_Swipe_Left.mp3 in Resources */,
 				A8E6BC2F28B1225000F5922F /* 1_finger_hold_down_moving_Down.mp3 in Resources */,
+				A8E6BC3A28B25CD900F5922F /* 1_finger_hold_down_Center.mp3 in Resources */,
 				9A8019FA28AFABCC00AA761D /* 3_Finger_Swipe_Left.mp3 in Resources */,
 				9A8019FB28AFABCC00AA761D /* 1_Finger_Swipe_Down.mp3 in Resources */,
 			);
@@ -306,6 +325,7 @@
 				A8C7B6DF28B11E010026B224 /* StereoAudioViewController.swift in Sources */,
 				9A8019CD28AFA2F300AA761D /* SceneDelegate.swift in Sources */,
 				9A801A0928AFAD2100AA761D /* Gesture.swift in Sources */,
+				A8E6BC3628B2594F00F5922F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

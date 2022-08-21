@@ -55,17 +55,17 @@ extension StereoAudioViewController {
         
         // Close to Center
         if center.contains(point) {
-            guard let url = Bundle.main.url(forResource: "1_finger_hold_down_Center", withExtension: "mp3") else { return }
+            guard let url = StereoAudioUrl.center else { return }
             audioPlayer.playSound(url: url)
         } else {
             // Move Up
             if point.y < halfHeight {
-                guard let url = Bundle.main.url(forResource: "1_finger_hold_down_Moving_up", withExtension: "mp3") else { return }
+                guard let url = StereoAudioUrl.movingUp else { return }
                 audioPlayer.playSound(url: url)
             }
             // Move Down
             else {
-                guard let url = Bundle.main.url(forResource: "1_finger_hold_down_moving_Down", withExtension: "mp3") else { return }
+                guard let url = StereoAudioUrl.movingDown else { return }
                 audioPlayer.playSound(url: url)
             }
         }
