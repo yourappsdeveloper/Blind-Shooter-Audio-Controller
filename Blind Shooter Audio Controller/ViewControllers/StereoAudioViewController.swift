@@ -69,9 +69,10 @@ extension StereoAudioViewController {
 
 extension StereoAudioViewController: TouchViewDelegate {
 
-    func touchesBeganInCenter() {
+    func touchesBegan(_ point: CGPoint) {
         guard let url = Bundle.main.url(forResource: "1_finger_hold_down_Center", withExtension: "mp3") else { return }
         audioPlayer.playSound(url: url)
+        centerView.center = point
         UIImpactFeedbackGenerator(style: .light).impactOccurred() // haptic feedback
     }
     

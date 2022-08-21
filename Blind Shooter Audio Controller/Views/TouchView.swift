@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TouchViewDelegate {
-    func touchesBeganInCenter()
+    func touchesBegan(_ point: CGPoint)
     func touchesMoved(_ point: CGPoint)
     func touchesEnded()
 }
@@ -28,12 +28,14 @@ class TouchView: UIView {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        if centerMode { delegate?.touchesBeganInCenter() }
+        guard touches.count == 1, let touch = touches.first else { return }
+        let point = touch.location(in: self)
+        delegate?.touchesBegan(point)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
-        guard centerMode, touches.count == 1, let touch = touches.first else { return }
+        guard touches.count == 1, let touch = touches.first else { return }
         let point = touch.location(in: self)
         delegate?.touchesMoved(point)
     }
